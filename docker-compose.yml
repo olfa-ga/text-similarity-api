@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  api:
+    build: .
+    container_name: text_similarity_api
+    ports:
+      - "8000:8000"  # Map local port 8000 to container port 8000
+    volumes:
+      - .:/usr/src/app  # Mount local code directory for hot reload
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Command to run the API inside the container
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload

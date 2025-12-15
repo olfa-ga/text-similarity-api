@@ -1,0 +1,7 @@
+Flask
+Flask-RESTful
+pymongo
+bcrypt
+spacy
+sentence-transformers
+torch
